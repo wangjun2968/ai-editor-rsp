@@ -1,10 +1,12 @@
 import { Outlet } from 'react-router-dom'
 import Navbar from './Navbar'
 import Footer from './Footer'
+import AdScript from './AdScript'
 
 export default function Layout() {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
+      <AdScript />
       <Navbar />
       <main className="flex-1">
         <Outlet />

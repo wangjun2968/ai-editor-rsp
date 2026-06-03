@@ -4,6 +4,7 @@ import CategoryGrid from '../components/CategoryGrid'
 import PopularTools from '../components/PopularTools'
 import Features from '../components/Features'
 import SEOBanner from '../components/SEOBanner'
+import AdBanner from '../components/AdBanner'
 
 export default function HomePage() {
   return (
@@ -26,10 +27,33 @@ export default function HomePage() {
         canonical="https://rspeditor.in"
       />
       <Hero />
+
+      {/* Top Banner Ad — 首页首屏下方 */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <AdBanner slot="1234567890" format="auto" className="min-h-[90px]" />
+      </div>
+
       <CategoryGrid />
+
+      {/* In-Feed Ad — 分类和热门工具之间 */}
+      <div className="max-w-4xl mx-auto px-4 py-6">
+        <AdBanner slot="2345678901" format="rectangle" className="min-h-[250px]" />
+      </div>
+
       <PopularTools />
+
+      {/* Mid-Page Banner — 热门工具和特性之间 */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <AdBanner slot="3456789012" format="horizontal" className="min-h-[90px]" />
+      </div>
+
       <Features />
       <SEOBanner />
+
+      {/* Bottom Banner Ad — 页面底部 */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 mb-8">
+        <AdBanner slot="4567890123" format="auto" className="min-h-[90px]" />
+      </div>
     </>
   )
 }

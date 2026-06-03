@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom'
 import { ArrowLeft, Sparkles, Upload, Image, Download, Wand2 } from 'lucide-react'
 import SEOHead from '../components/SEOHead'
+import AdBanner from '../components/AdBanner'
 import { getToolBySlug, getCategoryByToolSlug } from '../data/categories'
 import * as Icons from 'lucide-react'
 
@@ -38,8 +39,13 @@ export default function ToolPage() {
             </Link>
           </div>
 
+          {/* Tool Page Top Ad */}
+          <div className="mb-8">
+            <AdBanner slot={`tool-${tool.id}-top`} format="auto" className="min-h-[90px]" />
+          </div>
+
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Tool Info */}
+            {/* Tool Info Sidebar */}
             <div className="lg:col-span-1">
               <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${category.gradient} flex items-center justify-center mb-6`}>
                 {IconComponent && <IconComponent className="w-8 h-8 text-white" />}
@@ -54,11 +60,16 @@ export default function ToolPage() {
                 ))}
               </div>
               {tool.isFree && (
-                <div className="flex items-center gap-2 text-green-600 font-semibold">
+                <div className="flex items-center gap-2 text-green-600 font-semibold mb-6">
                   <Sparkles className="w-5 h-5" />
                   100% Free — No signup required
                 </div>
               )}
+
+              {/* Sidebar Ad */}
+              <div className="hidden lg:block">
+                <AdBanner slot={`tool-${tool.id}-sidebar`} format="vertical" className="min-h-[600px]" />
+              </div>
             </div>
 
             {/* Upload Area */}
@@ -73,6 +84,11 @@ export default function ToolPage() {
                   <Image className="w-5 h-5" />
                   Choose Photo
                 </button>
+              </div>
+
+              {/* Mobile Sidebar Ad */}
+              <div className="lg:hidden mt-6">
+                <AdBanner slot={`tool-${tool.id}-mobile`} format="rectangle" className="min-h-[250px]" />
               </div>
 
               {/* How to use */}
@@ -101,6 +117,11 @@ export default function ToolPage() {
                     <p className="text-sm text-gray-500">Get your result</p>
                   </div>
                 </div>
+              </div>
+
+              {/* Bottom Ad */}
+              <div className="mt-6">
+                <AdBanner slot={`tool-${tool.id}-bottom`} format="auto" className="min-h-[90px]" />
               </div>
             </div>
           </div>
