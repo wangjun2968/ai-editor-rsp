@@ -57,13 +57,16 @@ function generateHTML(title, desc, canonical) {
   <title>${title}</title>
   <link rel="canonical" href="${canonical}" />
   <script type="text/javascript">
+    // Hash Router redirect for SEO static pages
     var path = window.location.pathname;
-    var redirect = '/ai-editor-rsp/' + '#' + path;
-    window.location.replace(redirect);
+    var hashPath = path.replace(/^\\/ai-editor-rsp\\//, '/').replace(/^\\//, '');
+    if (hashPath && !window.location.hash) {
+      window.location.replace('./#' + hashPath);
+    }
   </script>
 </head>
 <body>
-  <p>Redirecting to <a href="${canonical}">${canonical}</a>...</p>
+  <p>Loading <a href="./">AI Editor RSP</a>...</p>
 </body>
 </html>`;
 }
