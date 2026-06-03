@@ -7,12 +7,15 @@
   <title>3D Zoom CapCut Template — Free AI Tool | AI Editor RSP</title>
   <link rel="canonical" href="https://rspeditor.in/tool/3d-zoom-capcut" />
   <script type="text/javascript">
+    // Hash Router redirect for SEO static pages
     var path = window.location.pathname;
-    var redirect = '/ai-editor-rsp/' + '#' + path;
-    window.location.replace(redirect);
+    var hashPath = path.replace(/^\/ai-editor-rsp\//, '/').replace(/^\//, '');
+    if (hashPath && !window.location.hash) {
+      window.location.replace('./#' + hashPath);
+    }
   </script>
 </head>
 <body>
-  <p>Redirecting to <a href="https://rspeditor.in/tool/3d-zoom-capcut">https://rspeditor.in/tool/3d-zoom-capcut</a>...</p>
+  <p>Loading <a href="./">AI Editor RSP</a>...</p>
 </body>
 </html>
