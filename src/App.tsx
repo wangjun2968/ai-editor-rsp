@@ -6,13 +6,13 @@ import ToolPage from './pages/ToolPage'
 
 function App() {
   return (
-    <Layout>
-      <Routes>
+    <Routes>
+      <Route element={<Layout />}>
         <Route path="/" element={<HomePage />} />
         <Route path="/category/:slug" element={<CategoryPage />} />
         <Route path="/tool/:slug" element={<ToolPage />} />
-      </Routes>
-    </Layout>
+      </Route>
+    </Routes>
   )
 }
 
